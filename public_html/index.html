@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Introvernacular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <style>
+            body{
+                background-color:black;
+            }
+            .no-space-horizontal{
+                padding-left:0px;
+                padding-right:0px;
+            }
+            .no-space-vertical{
+                padding-top:0px;
+                padding-bottom:0px;
+            }
+            .add-margin-vertical{
+                padding-top:5px;
+                padding-bottom:5px;
+            }
+            .add-margin-horizontal{
+                padding-left:10px;
+                padding-right:10px;
+            }
+            #contents{
+                text-align: center;
+                background: linear-gradient(lightpink,blue);
+                /*background-color:antiquewhite;*/
+                background-size:2000px;
+                background-position:center;
+                padding-top: 15vh;
+            }
+            #welcome_box{
+                background: linear-gradient(silver,orange);
+                width: 250px;
+                height: 250px;
+                margin:auto;
+                box-shadow: 2px 2px 1px black;
+                font-family:"Helvetica";
+                font-style: italic;
+                font-size: 32px;
+                user-select:none;
+                color:black;
+            }
+            .home_buttons{
+                background-color:black;
+                margin-top:10px;
+                box-shadow: 2px 2px 1px black;
+                color:lightgrey;
+                user-select:none;
+                background: linear-gradient(#353839, black);
+            }
+            .home_buttons:hover{
+                background-color:#353839;
+                margin-top:10px;
+                color:white;
+                font-style:italic;
+                background: linear-gradient(black, #353839);
+            }
+            .home_buttons:active{
+                background-color:white;
+                margin-top:10px;
+                color:black;
+                font-style:italic;
+                background: linear-gradient(white, #353839);
+            }
+            #welcome_div{
+                width:250px;
+                margin:auto;
+            }
+            #nav{
+                background: linear-gradient(#353839, black);
+            }
+        </style>
+            <nav id="nav" class="navbar-inverse ">
+                
+                <div class="container no-space-vertical">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                      <a class="navbar-brand" href="index.html"><b>Introvernacular</b></a>
+                  </div>
+
+                  <div class="collapse navbar-collapse" id="navbar-collapse-3">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="portfolio.html">Portfolio</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+              
+            <div id="contents" hidden="true">
+                <div id="welcome_box" hidden="true">
+                    欢迎</br>
+                    Bienvenue</br>
+                    <b style='font-size:50px'>Welcome</b></br>                    
+                    ようこそ</br>
+                    환영
+                </div>
+                <div id="home_options">
+                    <div id="welcome_div" hidden="true">
+                        <div id="About" class="home_buttons"><b>About</b></div>
+                        <div id="Portfolio" class="home_buttons"><b>Portfolio</b></div>
+                        <div class="home_buttons"><b>Contact</b></div>                        
+                    </div>
+                </div>
+                
+            </div>
+        
+        <script>
+            var contentHeight = $(window).height() - $('#nav').height();
+                //alert(contentHeight);
+            $("#contents").css({height: contentHeight});
+            
+            $('#contents').fadeIn(1000, function(){});
+            
+            //$('#welcome_box').hide();
+            $('#welcome_box').fadeIn(2000, function(){
+
+            
+            });
+            $('#welcome_div').fadeIn(2000, function(){});  
+            
+            $('#About').click(function(){
+                window.location.href = "about.html";
+            });
+            $('#Portfolio').click(function(){
+                window.location.href = "portfolio.html";
+            });
+            
+            $(window).resize(function(){
+                var contentHeight = $(window).height() - $('#nav').height();
+                //alert(contentHeight);
+                $("#contents").css({height: contentHeight});
+            });
+            
+            /*
+            var colorArray = new Array();
+            colorArray[0] = "blue";
+            colorArray[1] = "orange";
+            colorArray[2] = "pink";
+            var i = 0;
+            setInterval(
+                function(){   
+                    $("#contents").css({background: colorArray[i]});
+                    i += 1;
+                    
+                    if(i > 3){
+                        i = 0;
+                    }
+                },
+                10  /* 10000 ms = 10 sec */
+            /*);
+            */
+        </script>
+    </body>
+</html>
